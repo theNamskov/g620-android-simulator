@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b93644b2-65df-48c7-9996-bcc71e2c03ff" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1b91S84SVUG4Nk23QiFVW7KGeox" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE" value="right" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="90" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="left" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\francisca\IdeaProjects\setcalender\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.testCalender">
+    <configuration name="JCalendar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.toedter.calendar.JCalendar" />
+      <module name="setcalender" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.toedter.calendar.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testCalender" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testCalender" />
+      <module name="setcalender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="jcalendar-1.4.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/jcalendar-1.4.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.testCalender" />
+        <item itemvalue="Application.JCalendar" />
+        <item itemvalue="JAR Application.jcalendar-1.4.jar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b93644b2-65df-48c7-9996-bcc71e2c03ff" name="Default Changelist" comment="" />
+      <created>1588029493486</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588029493486</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="400" y="22" key="#JCalendar" timestamp="1588293242894">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="400" y="22" key="#JCalendar/0.0.1366.728@0.0.1366.728" timestamp="1588293242894" />
+    <state x="275" y="22" key="#Project_Structure" timestamp="1588291423420">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1588291423420" />
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser" timestamp="1589242081480">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1589242081480" />
+    <state x="412" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589232791658">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="147" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1589232791658" />
+    <state x="412" y="153" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1589404379346">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="153" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1589404379346" />
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589240204908">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589240204908" />
+    <state x="464" y="169" key="#com.intellij.uiDesigner.palette.ComponentItemDialog" timestamp="1589233008668">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="557" y="251" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff" timestamp="1589179476698">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="557" y="251" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.0.1366.728@0.0.1366.728" timestamp="1589179476698" />
+    <state x="464" y="169" key="#com.intellij.uiDesigner.palette.ComponentItemDialog/0.0.1366.728@0.0.1366.728" timestamp="1589233008658" />
+    <state x="437" y="79" key="DetectedRootsChooserDialog" timestamp="1588291266611">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="437" y="79" key="DetectedRootsChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1588291266611" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1589245271035">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589245271035" />
+    <state width="653" height="178" key="GridCell.Tab.0.bottom" timestamp="1589404289291">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="653" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589404289291" />
+    <state width="653" height="178" key="GridCell.Tab.0.center" timestamp="1589404289291">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="653" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1589404289291" />
+    <state width="653" height="178" key="GridCell.Tab.0.left" timestamp="1589404289291">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="653" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1589404289291" />
+    <state width="653" height="178" key="GridCell.Tab.0.right" timestamp="1589404289291">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="653" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1589404289291" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1588275839889">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588275839889" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1588275839889">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588275839889" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1588275839889">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588275839889" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1588275839889">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588275839889" />
+    <state x="163" y="0" key="SettingsEditor" timestamp="1588199825682">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588199825682" />
+    <state x="562" y="158" key="UIDesigner.ListEditorDialog" timestamp="1589179691794">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="562" y="158" key="UIDesigner.ListEditorDialog/0.0.1366.728@0.0.1366.728" timestamp="1589179691794" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1589388908843">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1589388908843" />
+    <state x="453" y="244" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog" timestamp="1589198642251">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="453" y="244" key="com.intellij.uiDesigner.propertyInspector.editors.string.StringEditorDialog/0.0.1366.728@0.0.1366.728" timestamp="1589198642251" />
+    <state x="425" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1589246154425">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="425" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728@0.0.1366.728" timestamp="1589246154425" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/setcalender$.ic" NAME=" Coverage Results" MODIFIED="1588228925849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
