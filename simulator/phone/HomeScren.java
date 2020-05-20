@@ -2,40 +2,97 @@ package simulator.phone;
 
 import java.awt.*;
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.geom.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.time.*;
 import java.time.format.*;
 
+import simulator.phone.homeicon.*;
+import simulator.phone.apps.phone.Phone;
+import simulator.phone.apps.messaging.Messaging;
+import simulator.phone.apps.calendar.Calendar;
+import simulator.phone.apps.contacts.Contacts;
+
 class HomeScreen extends JPanel {
 
+    Dimension size;
+    int panelHeight, panelWidth;
     String wallpaperHeadPath = "../../asset/img/wallpaper/bg";
-    String jpg = ".jpg";
+    String iconHeadPath = "../../asset/img/icon/";
+    String jpg = ".jpg", png = ".png";
     String wallpaperPath = wallpaperHeadPath + "11" + jpg;
     Image wallpaper;
     JButton clock;
     String time;
+    String phone = "phone", contacts = "contacts", messaging = "messaging", calendar = "calendar";
+    int iconGutter = 10, iconSize = 54;
+    JPanel application;
 
     public HomeScreen(Dimension size) {
-        setBounds(10, 39, (int) (size.width * 0.92), (int) (size.height * 0.89));
+        setLayout(null);
+        this.size = size;
+        panelHeight = (int) (size.height * 0.89) + 2;
+        panelWidth = (int) (size.width * 0.92);
+        setBounds(10, 39, panelWidth, panelHeight);
         setBackground(new Color(250, 250, 250, 200));
         wallpaper = new ImageIcon(getClass().getResource(wallpaperPath)).getImage();
 
+        final Dimension panelSize = new Dimension(panelWidth, panelHeight);
 
         DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm");
-        LocalDateTime now = LocalDateTime.now();
-
-        time = timeFormat.format(now);
+        
         clock = new JButton();
-        clock.setText(time);
         new Timer(0, event -> { time = timeFormat.format(LocalDateTime.now()); clock.setText(time); }).start();
         clock.setFont(new Font("Lato", Font.PLAIN, 62));
         clock.setForeground(new Color(230, 240, 250, 210));
-        clock.setBounds(40, 300, 235, 105);
+        clock.setBounds(30, 30, 235, 60);
         clock.setOpaque(false);
         clock.setContentAreaFilled(false);
         clock.setBorderPainted(false);
+        clock.setFocusable(false);
         add(clock);
+
+        int phoneX = 23, iconAlignY = 502;
+        HomeIcon phoneIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+phone+png)), phoneX, iconAlignY);
+        phoneIcon.getButton().addActionListener(event -> {
+            application = new Phone(panelSize);
+            removeAll();
+            add(application);
+            repaint();
+        });
+
+        int messagingX = phoneX+iconSize+iconGutter;
+        HomeIcon messagingIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+messaging+png)), messagingX, iconAlignY);
+        messagingIcon.getButton().addActionListener(event -> {
+            application = new Messaging(panelSize);
+            removeAll();
+            add(application);
+            repaint();
+        });
+
+        int calendarX = messagingX+iconSize+iconGutter;
+        HomeIcon calendarIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+calendar+png)), calendarX, iconAlignY);
+        calendarIcon.getButton().addActionListener(event -> {
+            application = new Calendar(panelSize);
+            removeAll();
+            add(application);
+            repaint();
+        });
+
+        int contactsX = calendarX+iconSize+iconGutter;
+        HomeIcon contactsIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+contacts+png)), contactsX, iconAlignY);
+        contactsIcon.getButton().addActionListener(event -> {
+            application = new Contacts(panelSize);
+            removeAll();
+            add(application);
+            repaint();
+        });
+
+
+        add(phoneIcon);
+        add(messagingIcon);
+        add(calendarIcon);
+        add(contactsIcon);
 
         backgroundHandler();
     }
@@ -44,12 +101,40 @@ class HomeScreen extends JPanel {
         new Timer(12000, event -> {
             this.wallpaperPath = wallpaperHeadPath + (ThreadLocalRandom.current().nextInt(1, 11)) + jpg;
             wallpaper = new ImageIcon(getClass().getResource(wallpaperPath)).getImage();
-            // this.time = timeFormat.format(now); clock.setText(this.time);
             repaint(); 
         }).start();
     }
 
     public void paintComponent(Graphics g) {
         g.drawImage(wallpaper, 0, 0, null);
+
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setColor(new Color(240, 240, 240));
+
+        int phoneBgX = 21, bgAlignY = 498;
+        Rectangle2D bgFrame1 = new Rectangle2D.Double(phoneBgX, bgAlignY, iconSize, iconSize);
+        Ellipse2D iconBg1 = new Ellipse2D.Double();
+        iconBg1.setFrame(bgFrame1);
+        g2.fill(iconBg1);
+
+        int messagingBgX = phoneBgX+iconSize+iconGutter;
+        Rectangle2D bgFrame2 = new Rectangle2D.Double(messagingBgX, bgAlignY, iconSize, iconSize);
+        Ellipse2D iconBg2 = new Ellipse2D.Double();
+        iconBg2.setFrame(bgFrame2);
+        g2.fill(iconBg2);
+
+        int calendarBgX = messagingBgX+iconSize+iconGutter;
+        Rectangle2D bgFrame3 = new Rectangle2D.Double(calendarBgX, bgAlignY, iconSize, iconSize);
+        Ellipse2D iconBg3 = new Ellipse2D.Double();
+        iconBg3.setFrame(bgFrame3);
+        g2.fill(iconBg3);
+
+        int contactsBgX = calendarBgX+iconSize+iconGutter;
+        Rectangle2D bgFrame4 = new Rectangle2D.Double(contactsBgX, bgAlignY, iconSize, iconSize);
+        Ellipse2D iconBg4 = new Ellipse2D.Double();
+        iconBg4.setFrame(bgFrame4);
+        g2.fill(iconBg4);
     }
+
+
 }
