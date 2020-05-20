@@ -5,11 +5,11 @@ import javax.swing.*;
 public class AppPanel extends JPanel {
     private static final long serialVersionUID = 1L;
 
-    int beginX = 50, beginY = 400,
+    public int beginX = 50, beginY = 400,
         initWidth = 10, initHeight = 30,
         panelWidth, panelHeight,
         navPaneY, navButtonsAlignY;
-    Dimension size;
+    public Dimension size;
 
     JPanel navigationPane;
     JButton backButton, homeButton;
@@ -35,8 +35,14 @@ public class AppPanel extends JPanel {
         navButtonsAlignY = (int) ((panelHeight-navPaneY)*0.15);
         int backButtonPosX = (int) (panelWidth*.08);
         backButton = makeNavButton(new ImageIcon(getClass().getResource(iconsHeadPath+navLeft+png)), backButtonPosX);
+
         int homeButtonPosX = (int) (panelWidth*.45);
         homeButton = makeNavButton(new ImageIcon(getClass().getResource(iconsHeadPath+navHome+png)), homeButtonPosX);
+        homeButton.addActionListener(event -> {
+           JComponent parent = (JComponent)(this.getParent());
+           parent.remove(this);
+        //    parent.repaint(); I need a way to call the parent's constructor over here
+        });
 
         add(navigationPane);
 

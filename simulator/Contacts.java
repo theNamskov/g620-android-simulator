@@ -7,5 +7,7 @@ public class Contacts extends AppPanel {
 
     public Contacts(Dimension size) {
         super(size);
+
+        
     }
 }

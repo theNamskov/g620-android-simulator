@@ -7,7 +7,7 @@ import java.time.format.*;
 
 class HomeScreen extends JPanel {
 
-    Dimension size, panelSize;
+    public Dimension size, panelSize;
     int panelHeight, panelWidth;
     String wallpaperHeadPath = "asset/img/wallpaper/bg";
     String iconHeadPath = "asset/img/icon/";
@@ -106,6 +106,8 @@ class HomeScreen extends JPanel {
         Ellipse2D iconBg4 = new Ellipse2D.Double();
         iconBg4.setFrame(bgFrame4);
         g2.fill(iconBg4);
+
+        new HomeScreen(size);
     }
 
     void resolveApplication(String app, Dimension size) {
