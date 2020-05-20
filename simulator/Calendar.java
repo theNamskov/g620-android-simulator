@@ -1,9 +1,5 @@
-package simulator.phone.apps.calendar;
-
 import java.awt.*;
 import javax.swing.*;
-
-import simulator.phone.apps.AppPanel;;
 
 
 public class Calendar extends AppPanel {

@@ -1,9 +1,5 @@
-package simulator.phone.apps.contacts;
-
 import java.awt.*;
 import javax.swing.*;
-
-import simulator.phone.apps.AppPanel;;
 
 
 public class Contacts extends AppPanel {

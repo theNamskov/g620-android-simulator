@@ -1,5 +1,3 @@
-package simulator.phone;
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -24,7 +22,7 @@ class MainPanel extends JPanel {
     }
 
     private void configure() {
-        img = new ImageIcon(getClass().getResource("../../asset/frame/nokia-frame2.png")).getImage();
+        img = new ImageIcon(getClass().getResource("asset/frame/nokia-frame2.png")).getImage();
         size = new Dimension(img.getWidth(null), img.getHeight(null));
         setPreferredSize(size);
         setMinimumSize(size);

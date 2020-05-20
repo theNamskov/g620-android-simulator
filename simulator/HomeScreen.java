@@ -1,5 +1,3 @@
-package simulator.phone;
-
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
@@ -7,18 +5,12 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.time.*;
 import java.time.format.*;
 
-import simulator.phone.homeicon.*;
-import simulator.phone.apps.phone.Phone;
-import simulator.phone.apps.messaging.Messaging;
-import simulator.phone.apps.calendar.Calendar;
-import simulator.phone.apps.contacts.Contacts;
-
 class HomeScreen extends JPanel {
 
-    Dimension size;
+    Dimension size, panelSize;
     int panelHeight, panelWidth;
-    String wallpaperHeadPath = "../../asset/img/wallpaper/bg";
-    String iconHeadPath = "../../asset/img/icon/";
+    String wallpaperHeadPath = "asset/img/wallpaper/bg";
+    String iconHeadPath = "asset/img/icon/";
     String jpg = ".jpg", png = ".png";
     String wallpaperPath = wallpaperHeadPath + "11" + jpg;
     Image wallpaper;
@@ -37,7 +29,7 @@ class HomeScreen extends JPanel {
         setBackground(new Color(250, 250, 250, 200));
         wallpaper = new ImageIcon(getClass().getResource(wallpaperPath)).getImage();
 
-        final Dimension panelSize = new Dimension(panelWidth, panelHeight);
+        panelSize = new Dimension(panelWidth, panelHeight);
 
         DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm");
         
@@ -54,39 +46,19 @@ class HomeScreen extends JPanel {
 
         int phoneX = 23, iconAlignY = 502;
         HomeIcon phoneIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+phone+png)), phoneX, iconAlignY);
-        phoneIcon.getButton().addActionListener(event -> {
-            application = new Phone(panelSize);
-            removeAll();
-            add(application);
-            repaint();
-        });
+        phoneIcon.getButton().addActionListener(event -> resolveApplication(phone, panelSize));
 
         int messagingX = phoneX+iconSize+iconGutter;
         HomeIcon messagingIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+messaging+png)), messagingX, iconAlignY);
-        messagingIcon.getButton().addActionListener(event -> {
-            application = new Messaging(panelSize);
-            removeAll();
-            add(application);
-            repaint();
-        });
+        messagingIcon.getButton().addActionListener(event -> resolveApplication(messaging, panelSize));
 
         int calendarX = messagingX+iconSize+iconGutter;
         HomeIcon calendarIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+calendar+png)), calendarX, iconAlignY);
-        calendarIcon.getButton().addActionListener(event -> {
-            application = new Calendar(panelSize);
-            removeAll();
-            add(application);
-            repaint();
-        });
+        calendarIcon.getButton().addActionListener(event -> resolveApplication(calendar, panelSize));
 
         int contactsX = calendarX+iconSize+iconGutter;
         HomeIcon contactsIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+contacts+png)), contactsX, iconAlignY);
-        contactsIcon.getButton().addActionListener(event -> {
-            application = new Contacts(panelSize);
-            removeAll();
-            add(application);
-            repaint();
-        });
+        contactsIcon.getButton().addActionListener(event -> resolveApplication(contacts, panelSize));
 
 
         add(phoneIcon);
@@ -136,5 +108,15 @@ class HomeScreen extends JPanel {
         g2.fill(iconBg4);
     }
 
+    void resolveApplication(String app, Dimension size) {
+        if(app.equalsIgnoreCase("calendar")) application = new Calendar(size);
+        else if(app.equalsIgnoreCase("phone")) application = new Phone(size);
+        else if(app.equalsIgnoreCase("messaging")) application = new Messaging(size);
+        else if (app.equalsIgnoreCase("contacts")) application = new Contacts(size);
+        else application = new AppPanel(size);
 
+        removeAll();
+        add(application);
+        repaint();
+    }
 }
