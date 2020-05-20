@@ -7,13 +7,14 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.time.*;
 import java.time.format.*;
 
+
 import simulator.phone.homeicon.*;
 import simulator.phone.apps.phone.Phone;
 import simulator.phone.apps.messaging.Messaging;
 import simulator.phone.apps.calendar.Calendar;
 import simulator.phone.apps.contacts.Contacts;
 
-class HomeScreen extends JPanel {
+public class HomeScreen extends JPanel {
 
     Dimension size;
     int panelHeight, panelWidth;

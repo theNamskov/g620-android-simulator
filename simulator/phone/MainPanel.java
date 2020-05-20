@@ -5,11 +5,11 @@ import javax.swing.*;
 import java.awt.event.*;
 
 
-class MainPanel extends JPanel {
+public class MainPanel extends JPanel {
 
     private static final long serialVersionUID = 1L;
     Image img;
-    Dimension size;
+    public Dimension size;
     public MainPanel() {
         configure();
         add(new HomeScreen(size));
