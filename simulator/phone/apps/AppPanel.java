@@ -9,9 +9,9 @@ public class AppPanel extends JPanel {
     private static final long serialVersionUID = 1L;
 
     public int beginX = 50, beginY = 400,
-        initWidth = 10, initHeight = 30,
-        panelWidth, panelHeight,
-        navPaneY, navButtonsAlignY;
+            initWidth = 10, initHeight = 30,
+            panelWidth, panelHeight,
+            navPaneY, navButtonsAlignY;
     public Dimension size;
 
     JPanel navigationPane;
