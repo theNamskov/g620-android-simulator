@@ -33,8 +33,3 @@ public class MainPanel extends JPanel {
         setLayout(null);
     }
 }
-// class NewPanelCallback implements ActionListener {
-//     public void actionPerformed(ActionEvent event) {
-//         new MainPanel();
-//     }
-// }
