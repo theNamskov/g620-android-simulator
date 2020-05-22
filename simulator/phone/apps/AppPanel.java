@@ -17,10 +17,12 @@ public class AppPanel extends JPanel {
     JPanel navigationPane;
     JButton backButton, homeButton;
 
-    String iconsHeadPath = "../../../asset/img/icon/";
-    String navLeft = "navleft", navHome = "navhome";
-    String png = ".png";
+    public Color navColor = new Color(33, 55, 77);
 
+    public String iconsHeadPath = "../../../asset/img/icon/", png = ".png";
+    String navLeft = "navleft", navHome = "navhome";
+
+    //  Constructor
     public AppPanel(Dimension size) {
         this.size = size;
 
@@ -32,7 +34,7 @@ public class AppPanel extends JPanel {
         navigationPane = new JPanel();
         navPaneY = (int)(panelHeight*0.96);
         navigationPane.setBounds(0, navPaneY, panelWidth, panelHeight-navPaneY);
-        navigationPane.setBackground(new Color(33, 55, 77));
+        navigationPane.setBackground(navColor);
         navigationPane.setLayout(null);
 
         navButtonsAlignY = (int) ((panelHeight-navPaneY)*0.15);

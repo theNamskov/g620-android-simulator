@@ -3,45 +3,48 @@ package simulator.phone.homeicon;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.geom.*;
-// import java.awt.event.*;
 
 
 public class HomeIcon extends JPanel {
     private static final long serialVersionUID = 1L;
 
-    Color iconBg = new Color(180, 185, 181, 70);
+    Color iconBg = new Color(180, 185, 181, 70), nullifier = new Color(0,0,0,0);
     JButton btn;
-    int locX, locY, w = 50, h = 52;
-    public HomeIcon(Icon icon, int locX, int locY) {
+    int locX, locY, iconSize;
+    int iconPos, btnPos, btnSize;
+
+    public HomeIcon(Icon icon, int locX, int locY, int iconSize) {
         super();
 
         this.locX = locX;
         this.locY = locY;
+        this.iconSize = iconSize;
 
-        setLayout(new BorderLayout());
-        setBounds(locX, locY, w, h);
-        setBackground(new Color(0, 0, 0, 0));
+        setLayout(null);
+        setBounds(locX, locY, this.iconSize, this.iconSize);
+        setBackground(nullifier);
         // setBorder(null);
+
+        iconPos = (int) (this.iconSize*0.05);
+        JPanel btnPanel = new BackgroundPanel(iconPos, this.iconSize);
+        btnPanel.setLayout(null);     
 
         btn = new JButton(icon);
         btn.setBorderPainted(false);
         btn.setOpaque(false);
         btn.setContentAreaFilled(false);
         btn.setFocusable(false);
-        add(btn, BorderLayout.NORTH);
+        btnPos = (int) (iconSize*0.01);
+        btnSize = (int) (iconSize*0.9);
+        btn.setBounds(btnPos, btnPos, btnSize, btnSize);
+
+        btnPanel.add(btn);
+
+        add(btnPanel);
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(this.iconBg);
-
-        Graphics2D g2 = (Graphics2D) g;
-
-        Rectangle2D bgFrame = new Rectangle2D.Double(locX, locY, w, h);
-        Ellipse2D iconBgRound = new Ellipse2D.Double();
-        iconBgRound.setFrame(bgFrame);
-        g2.draw(iconBgRound);
-        g2.fill(iconBgRound);
     }
 
     public JButton getButton() {
@@ -49,49 +52,28 @@ public class HomeIcon extends JPanel {
     }
 }
 
-// public class IconButton extends JComponent {
-//     private Icon icon;
-//     private String tooltip;
-//     private String type;
-//     private String appName;
-//     private JPanel application;
-//     private Dimension size;
+class BackgroundPanel extends JPanel {
+    int iconPosition, iconSize;
+    BackgroundPanel(int iconPos, int iconSize) {
+        super();
 
-//     final String[] apps = {"contacts", "phone", "messaging", "calendar"};
+        this.iconPosition = iconPos;
+        this.iconSize = (int) (iconSize*0.8);
+        setBounds(iconPosition, iconPosition, iconSize, iconSize);
+        setBackground(new Color(0,0,0,0));
+    }
 
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
 
-//     public IconButton(String appName, String type, Icon icon, Dimension size) {
-//         this.icon = icon;
-//         this.appName = appName;
-//         this.tooltip = "View " + this.appName + " application";
-//         this.type = type;
-//         this.size = size;
-//     }
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setColor(new Color(230, 240, 250, 210));
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-//     public JButton getButton() {
-//         JButton btn = new JButton(new LaunchAction());
-//         // btn.setBounds(40, 908, 48, 50);
-//         btn.setFocusable(false);
-//         btn.setContentAreaFilled(false);
-//         btn.setBorderPainted(false);
-//         btn.setOpaque(false);
-
-//         return btn;
-//     }
-
-//     private class LaunchAction extends AbstractAction {
-
-//         public LaunchAction() {
-//             putValue(Action.SHORT_DESCRIPTION, tooltip);
-//             putValue(Action.SMALL_ICON, icon);
-//             putValue(Action.NAME, appName);
-//             putValue("type", type);
-//         }
-
-//         public void actionPerformed(ActionEvent event) {
-//             application = new JPanel();
-//             application.setBounds(10, 39, (int) (size.width * 0.92), (int) (size.height * 0.89));
-//             application.setBackground(new Color(34, 40, 22, 100));
-//         }
-//     }
-// }
+        Rectangle2D bgFrame = new Rectangle2D.Double(iconPosition, iconPosition, iconSize, iconSize);
+        Ellipse2D iconBgRound = new Ellipse2D.Double();
+        iconBgRound.setFrame(bgFrame);
+        g2.draw(iconBgRound);
+        g2.fill(iconBgRound);
+    }
+}

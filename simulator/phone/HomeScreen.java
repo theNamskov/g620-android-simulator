@@ -26,7 +26,7 @@ public class HomeScreen extends JPanel {
     JButton clock;
     String time;
     String phone = "phone", contacts = "contacts", messaging = "messaging", calendar = "calendar";
-    int iconGutter = 10, iconSize = 54;
+    int iconGutter, iconSize = 60;
     JPanel application;
 
     public HomeScreen(Dimension size) {
@@ -35,7 +35,7 @@ public class HomeScreen extends JPanel {
         panelHeight = (int) (size.height * 0.89) + 2;
         panelWidth = (int) (size.width * 0.92);
         setBounds(10, 39, panelWidth, panelHeight);
-        setBackground(new Color(250, 250, 250, 200));
+        // setBackground(new Color(250, 250, 250, 200));
         wallpaper = new ImageIcon(getClass().getResource(wallpaperPath)).getImage();
 
         this.panelSize = new Dimension(panelWidth, panelHeight);
@@ -53,20 +53,23 @@ public class HomeScreen extends JPanel {
         clock.setFocusable(false);
         add(clock);
 
-        int phoneX = 23, iconAlignY = 502;
-        HomeIcon phoneIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+phone+png)), phoneX, iconAlignY);
+        iconGutter = (int) (panelWidth*0.01);
+        iconSize = (int) ((panelWidth-(iconGutter*4))/4);
+
+        int phoneX = iconGutter, iconAlignY = 502;
+        HomeIcon phoneIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+phone+png)), phoneX, iconAlignY, iconSize);
         phoneIcon.getButton().addActionListener(event -> resolveApplication(phone));
 
         int messagingX = phoneX+iconSize+iconGutter;
-        HomeIcon messagingIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+messaging+png)), messagingX, iconAlignY);
+        HomeIcon messagingIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+messaging+png)), messagingX, iconAlignY, iconSize);
         messagingIcon.getButton().addActionListener(event -> resolveApplication(messaging));
 
         int calendarX = messagingX+iconSize+iconGutter;
-        HomeIcon calendarIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+calendar+png)), calendarX, iconAlignY);
+        HomeIcon calendarIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+calendar+png)), calendarX, iconAlignY, iconSize);
         calendarIcon.getButton().addActionListener(event -> resolveApplication(calendar));
 
         int contactsX = calendarX+iconSize+iconGutter;
-        HomeIcon contactsIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+contacts+png)), contactsX, iconAlignY);
+        HomeIcon contactsIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+contacts+png)), contactsX, iconAlignY, iconSize);
         contactsIcon.getButton().addActionListener(event -> resolveApplication(contacts));
 
 
@@ -86,35 +89,12 @@ public class HomeScreen extends JPanel {
         }).start();
     }
 
-    public void paintComponent(Graphics g) {
+    @Override
+    protected void paintComponent(Graphics g) {
         g.drawImage(wallpaper, 0, 0, null);
 
         Graphics2D g2 = (Graphics2D) g;
-        g2.setColor(new Color(240, 240, 240));
-
-        int phoneBgX = 21, bgAlignY = 498;
-        Rectangle2D bgFrame1 = new Rectangle2D.Double(phoneBgX, bgAlignY, iconSize, iconSize);
-        Ellipse2D iconBg1 = new Ellipse2D.Double();
-        iconBg1.setFrame(bgFrame1);
-        g2.fill(iconBg1);
-
-        int messagingBgX = phoneBgX+iconSize+iconGutter;
-        Rectangle2D bgFrame2 = new Rectangle2D.Double(messagingBgX, bgAlignY, iconSize, iconSize);
-        Ellipse2D iconBg2 = new Ellipse2D.Double();
-        iconBg2.setFrame(bgFrame2);
-        g2.fill(iconBg2);
-
-        int calendarBgX = messagingBgX+iconSize+iconGutter;
-        Rectangle2D bgFrame3 = new Rectangle2D.Double(calendarBgX, bgAlignY, iconSize, iconSize);
-        Ellipse2D iconBg3 = new Ellipse2D.Double();
-        iconBg3.setFrame(bgFrame3);
-        g2.fill(iconBg3);
-
-        int contactsBgX = calendarBgX+iconSize+iconGutter;
-        Rectangle2D bgFrame4 = new Rectangle2D.Double(contactsBgX, bgAlignY, iconSize, iconSize);
-        Ellipse2D iconBg4 = new Ellipse2D.Double();
-        iconBg4.setFrame(bgFrame4);
-        g2.fill(iconBg4);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     }
 
     void resolveApplication(String app) {
