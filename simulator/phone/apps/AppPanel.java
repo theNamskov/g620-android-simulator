@@ -7,11 +7,12 @@ import simulator.phone.*;
 
 public class AppPanel extends JPanel {
     private static final long serialVersionUID = 1L;
+    public static int activePage = 0;
 
     public int beginX = 50, beginY = 400,
             initWidth = 10, initHeight = 30,
             panelWidth, panelHeight,
-            navPaneY, navButtonsAlignY;
+            navPaneY, navButtonsAlignY, navPaneH;
     public Dimension size;
 
     JPanel navigationPane;
@@ -25,6 +26,8 @@ public class AppPanel extends JPanel {
     //  Constructor
     public AppPanel(Dimension size) {
         this.size = size;
+        activePage += 1;
+        System.out.println("Active Pages: "+activePage);
 
         setLayout(null);
         setBackground(new Color(210, 211, 211));
@@ -33,7 +36,8 @@ public class AppPanel extends JPanel {
 
         navigationPane = new JPanel();
         navPaneY = (int)(panelHeight*0.96);
-        navigationPane.setBounds(0, navPaneY, panelWidth, panelHeight-navPaneY);
+        navPaneH = panelHeight - navPaneY;
+        navigationPane.setBounds(0, navPaneY, panelWidth, navPaneH);
         navigationPane.setBackground(navColor);
         navigationPane.setLayout(null);
 
@@ -41,7 +45,7 @@ public class AppPanel extends JPanel {
         int backButtonPosX = (int) (panelWidth*.08);
         backButton = makeNavButton(new ImageIcon(AppPanel.class.getResource(iconsHeadPath+navLeft+png)), backButtonPosX);
 
-        int homeButtonPosX = (int) (panelWidth*.45);
+        int homeButtonPosX = (int) (panelWidth*.47);
         homeButton = makeNavButton(new ImageIcon(AppPanel.class.getResource(iconsHeadPath+navHome+png)), homeButtonPosX);
         homeButton.addActionListener(event -> {
            JComponent parent = (JComponent)(this.getParent());

@@ -35,7 +35,7 @@ public class HomeScreen extends JPanel {
         panelHeight = (int) (size.height * 0.89) + 2;
         panelWidth = (int) (size.width * 0.92);
         setBounds(10, 39, panelWidth, panelHeight);
-        // setBackground(new Color(250, 250, 250, 200));
+        setBackground(new Color(250, 250, 250, 200));
         wallpaper = new ImageIcon(getClass().getResource(wallpaperPath)).getImage();
 
         this.panelSize = new Dimension(panelWidth, panelHeight);
@@ -57,19 +57,35 @@ public class HomeScreen extends JPanel {
         iconSize = (int) ((panelWidth-(iconGutter*4))/4);
 
         int phoneX = iconGutter, iconAlignY = 502;
-        HomeIcon phoneIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+phone+png)), phoneX, iconAlignY, iconSize);
+        HomeIcon phoneIcon = new HomeIcon(new ImageIcon(HomeScreen.class.getResource(iconHeadPath+phone+png)), 
+            phoneX, 
+            iconAlignY, 
+            iconSize
+        );
         phoneIcon.getButton().addActionListener(event -> resolveApplication(phone));
 
         int messagingX = phoneX+iconSize+iconGutter;
-        HomeIcon messagingIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+messaging+png)), messagingX, iconAlignY, iconSize);
+        HomeIcon messagingIcon = new HomeIcon(new ImageIcon(HomeScreen.class.getResource(iconHeadPath+messaging+png)), 
+            messagingX, 
+            iconAlignY, 
+            iconSize
+        );
         messagingIcon.getButton().addActionListener(event -> resolveApplication(messaging));
 
         int calendarX = messagingX+iconSize+iconGutter;
-        HomeIcon calendarIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+calendar+png)), calendarX, iconAlignY, iconSize);
+        HomeIcon calendarIcon = new HomeIcon(new ImageIcon(HomeScreen.class.getResource(iconHeadPath+calendar+png)), 
+            calendarX, 
+            iconAlignY, 
+            iconSize
+        );
         calendarIcon.getButton().addActionListener(event -> resolveApplication(calendar));
 
         int contactsX = calendarX+iconSize+iconGutter;
-        HomeIcon contactsIcon = new HomeIcon(new ImageIcon(getClass().getResource(iconHeadPath+contacts+png)), contactsX, iconAlignY, iconSize);
+        HomeIcon contactsIcon = new HomeIcon(new ImageIcon(HomeScreen.class.getResource(iconHeadPath+contacts+png)), 
+            contactsX, 
+            iconAlignY, 
+            iconSize
+        );
         contactsIcon.getButton().addActionListener(event -> resolveApplication(contacts));
 
 

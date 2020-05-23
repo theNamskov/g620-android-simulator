@@ -11,9 +11,10 @@ import simulator.phone.apps.AppPanel;;
 public class Phone extends AppPanel {
     private static final long serialVersionUID = 1L;
 
-    JPanel recent, dial, favourites, pagenav;
-    int pagenavY, pagenavH, pagenavW, pagenavColumn,
-        pagenavBtnAlignY;
+    JPanel logs, dial, favs, pagenav;
+    public int pagenavY, pagenavH, pagenavW, pagenavColumn,
+        pagenavBtnAlignY,
+        dialPaneY, dialPaneH;
     
     String dialTitle = "dial",
            logsTitle = "logs",
@@ -39,6 +40,11 @@ public class Phone extends AppPanel {
         pagenavW = panelWidth;
         pagenavH = navPaneY - pagenavY;
         pagenavColumn = (int) (pagenavW * 0.2);
+        
+        dialPaneY = (int) (panelHeight*0.05);
+        dialPaneH = panelHeight - (dialPaneY + navPaneH + pagenavH);
+        DialPane dialPane = new DialPane(new Dimension(panelWidth, dialPaneH), dialPaneY);
+        add(dialPane.getScrollPane());
 
         pagenav = new JPanel();
         pagenav.setLayout(null);
@@ -50,8 +56,10 @@ public class Phone extends AppPanel {
         JButton dialButton = addPageNavButton(dialTitle, new ImageIcon(AppPanel.class.getResource(iconsHeadPath+dialIcon+png)), 0),
         logsButton = addPageNavButton(logsTitle, new ImageIcon(AppPanel.class.getResource(iconsHeadPath+logsIcon+png)), pagenavColumn*2),
         favsButton = addPageNavButton(favsTitle, new ImageIcon(AppPanel.class.getResource(iconsHeadPath+favsIcon+png)), pagenavColumn*4);
-        
+
         add(pagenav);
+
+        
     }
 
     JButton addPageNavButton(String title, ImageIcon icon, int posX) {

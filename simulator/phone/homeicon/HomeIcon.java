@@ -23,7 +23,6 @@ public class HomeIcon extends JPanel {
         setLayout(null);
         setBounds(locX, locY, this.iconSize, this.iconSize);
         setBackground(nullifier);
-        // setBorder(null);
 
         iconPos = (int) (this.iconSize*0.05);
         JPanel btnPanel = new BackgroundPanel(iconPos, this.iconSize);
