@@ -17,15 +17,17 @@ public class DialPane {
         panel.setLayout(null);
         panel.setBackground(Color.BLACK);
         panel.setPreferredSize(new Dimension(size.width, size.height));
-        for(int i = 0; i < 150; i++) {
+        int i;
+        for(i = 1; i < 200; i++) {
             btn = new JButton("hello "+i);
-            btn.setBounds(2, i*5, 150, 3);
+            btn.setBounds(10, i*25, (int)(size.width * 0.8), 20);
             panel.add(btn);
         }
+        System.out.println(i);
+        panel.setPreferredSize(new Dimension(size.width, (i*25)+20));
         scrollPane = new JScrollPane(panel);
-        scrollPane.setBounds(0, locY, size.width+10, size.height-2);
+        scrollPane.setBounds(0, locY, size.width+12, size.height);
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
     }
 
     public JPanel getPanel() {
