@@ -1,14 +1,12 @@
-package simulator.phone;
-
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
-public class Main {
+class Main {
 
     public static void main(String[] args) {
             JFrame frame = new JFrame();
-            MainPanel phonePanel = new MainPanel();
-            Dimension frameSize = phonePanel.panelSize();
+            PhoneFrame phonePanel = new PhoneFrame();
+            Dimension frameSize = phonePanel.getSize();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setLayout(new BorderLayout());
             frame.setUndecorated(true);
