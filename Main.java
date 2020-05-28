@@ -12,6 +12,7 @@ class Main {
             frame.setUndecorated(true);
             frame.setSize(frameSize);
             frame.setLocationByPlatform(true);
+            frame.setAlwaysOnTop(true);
 
             JPanel background = new JPanel();
             background.setBackground(new Color(50, 50, 50));

@@ -62,4 +62,8 @@ public class AppDefault extends JPanel {
         parent.add(navApp);
         parent.repaint();
     }
+
+    public Icon getIcon(String name) {
+        return new ImageIcon(PhoneFrame.class.getResource(iconsHeadPath+name+png));
+    }
 }

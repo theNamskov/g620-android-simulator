@@ -14,7 +14,7 @@ public class PhoneApp extends AppDefault {
                dialPaneY = 0,
                dialPaneH = contentPaneH;
 
-    JPanel activePane = new PhoneAppDial();
+    JScrollPane activePane = new JScrollPane(new PhoneAppDial());
 
     private SelectedIndicatorPane indicatorPane = new SelectedIndicatorPane();
     Rectangle selectedIndicator;
@@ -27,19 +27,19 @@ public class PhoneApp extends AppDefault {
            favsIcon = "favs-default";
 
 
-    public PhoneApp() {}
+    public PhoneApp() {
+        
+    }
 
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // activePane.setBounds(0, 0, panelWidth+6, contentPaneH-pagenavH);
-        // add(activePane);
+        activePane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         pagenav.setLayout(null);
         pagenav.setBounds(0, pagenavY, pagenavW, pagenavH);
 
-        indicatorPane = new SelectedIndicatorPane();
         pagenav.add(indicatorPane);
 
         dialButton = addPageNavButton(dialTitle, new ImageIcon(PhoneFrame.class.getResource(iconsHeadPath+dialIcon+png)), 0);
@@ -49,6 +49,8 @@ public class PhoneApp extends AppDefault {
         add(pagenav);
 
         activePane.setBounds(0, 0, panelWidth+6, 5+contentPaneH-pagenavH);
+        activePane.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(0,0,0,0)));
+        activePane.setOpaque(false);
         add(activePane);
     }
 
@@ -63,13 +65,17 @@ public class PhoneApp extends AppDefault {
 
         navBtn.addActionListener(event -> {
             JButton focusedButton = (JButton) (event.getSource());
+            remove(activePane);
             if(title == dialTitle) {
-                activePane = new PhoneAppDial();
-                indicatorPane.navigate(focusedButton.getBounds(selectedIndicator));
-                add(activePane);
+                activePane = new JScrollPane(new PhoneAppDial());
+                activePane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_NEVER);
             }
+            else if(title == logsTitle) activePane = new JScrollPane(new PhoneAppLogs());
+            else if(title == favsTitle) activePane = new JScrollPane(new PhoneAppFavs());
 
-            revalidate();
+            indicatorPane.navigate(focusedButton.getBounds(selectedIndicator));
+            add(activePane);
+            repaint();
         });
 
         pagenav.add(navBtn);
@@ -94,7 +100,6 @@ public class PhoneApp extends AppDefault {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.setColor(navColor);
-            setBackground(new Color(0,0,0,0));
             g.fillRect(x, y, paneWidth, paneHeight);
         }
 
@@ -104,6 +109,3 @@ public class PhoneApp extends AppDefault {
         }
     }
 }
-
-
-
