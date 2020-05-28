@@ -37,7 +37,7 @@ public class PhoneAppCall extends JPanel {
         callDetails.setLayout(new BorderLayout());
         callDetails.setOpaque(false);
         callDetails.add(phoneNumDisplay);
-        callDetails.setBounds((int)(0.2*w), 2, (int)(0.6*w), (int)(h*0.15));
+        callDetails.setBounds((int)(0.3*w), 2, (int)(0.6*w), (int)(h*0.15));
         add(callDetails);
 
         addCall.setEnabled(false);
