@@ -1,5 +1,4 @@
 # Android Simulator
-End of second semester project for the Object Oriented Programming With Java course, Computer Engineering, University of Ghana, 2020. 
 This project simulates the interface and simple workings of an android mobile phone.
 
 ## Run
