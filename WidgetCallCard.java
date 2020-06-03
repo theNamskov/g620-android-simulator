@@ -5,12 +5,11 @@ import java.util.Random;
 
 import javax.swing.*;
 
-import org.w3c.dom.events.MouseEvent;
-
 public class WidgetCallCard extends JPanel {
     private static final long serialVersionUID = 1L;
 
     AppDefault tmp = new AppDefault();
+    Point frameLoc = AppDefault.custom_location;
     Random rn = new Random();
     public String displayName = "Unknown";
     public String displayNumber;
@@ -71,18 +70,8 @@ public class WidgetCallCard extends JPanel {
         timestampLabel.setFont(new Font("Lato", 0, 8));
         callTypeLabel.setIcon(tmp.getIcon(this.callType));
 
-        nameLabel.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                System.out.println("clicked!");
-                new WidgetCall(displayNumber, tmp.custom_location);
-            }
-        });
-        numberLabel.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                System.out.println("clicked!");
-                new WidgetCall(displayNumber, tmp.custom_location);
-            }
-        });
+        nameLabel.addMouseListener(new CallHandler());
+        numberLabel.addMouseListener(new CallHandler());
 
         nameLabel.setBounds(labelX, nameY, nameW, nameH);
         numberLabel.setBounds(labelX, numberY, numberW, numberH);
@@ -134,9 +123,9 @@ public class WidgetCallCard extends JPanel {
     }
 
     class CallHandler extends MouseAdapter {
+        @Override
         public void mouseClicked(MouseEvent e) {
-            System.out.println("clicked!");
-            new WidgetCall(displayNumber, tmp.custom_location);
+            new WidgetCall(displayNumber, frameLoc);
         }
     }
 }
