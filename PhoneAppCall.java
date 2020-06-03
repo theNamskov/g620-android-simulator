@@ -8,8 +8,8 @@ public class PhoneAppCall extends JPanel {
 
     AppDefault tmp = new AppDefault();
     int w = tmp.panelWidth, h = tmp.panelHeight;
-    JPanel callDetails = new JPanel();
-    JLabel phoneNumDisplay = new JLabel();
+    WidgetCallerDetails callDetails = new WidgetCallerDetails();
+    JLabel callLoading = new JLabel();
     Icon muteDef = tmp.getIcon("mute"), muteSel = tmp.getIcon("mute-selected"), keypadDef = tmp.getIcon("dial"),
             speakerDef = tmp.getIcon("speaker"), speakerSel = tmp.getIcon("speaker-selected"),
             addCallDef = tmp.getIcon("add-call"), holdDef = tmp.getIcon("hold"), endCallIcon = tmp.getIcon("end-call");
@@ -25,20 +25,23 @@ public class PhoneAppCall extends JPanel {
         setLayout(null);
         setBackground(tmp.navColor);
 
-        phoneNumDisplay.setFont(new Font("Lato", Font.PLAIN, 24));
-        phoneNumDisplay.setForeground(Color.WHITE);
+        callLoading.setOpaque(false);
+        callLoading.setForeground(Color.white);
+        callLoading.setFont(new Font("Lato", Font.PLAIN, 12));
+        callLoading.setText("Calling...");
+        callLoading.setBounds((int) (w * 0.35), (int) (h * 0.23), (int) (w * 0.29), (int) (h * 0.04));
+        callLoading.setHorizontalAlignment(JLabel.CENTER);
+        add(callLoading);
 
-        callDetails.setLayout(new BorderLayout());
         callDetails.setOpaque(false);
-        callDetails.add(phoneNumDisplay);
-        callDetails.setBounds((int) (0.23 * w), 2, (int) (0.6 * w), (int) (h * 0.15));
+        callDetails.setBounds(0, 2, w, (int) (h * 0.2));
         add(callDetails);
 
         addCall.setEnabled(false);
         hold.setEnabled(false);
 
         callActions.setLayout(gLayout);
-        callActions.setBounds(0, (int) (h * 0.3), w, (int) (h * 0.3));
+        callActions.setBounds(0, (int) (h * 0.4), w, (int) (h * 0.3));
         callActions.add(mute);
         callActions.add(keypad);
         callActions.add(speaker);
@@ -103,7 +106,7 @@ public class PhoneAppCall extends JPanel {
     }
 
     public void setNumber(String phoneNum) {
-        phoneNumDisplay.setText(phoneNum);
+        callDetails.setPhoneNumber(phoneNum);
     }
 
     public JButton terminate() {

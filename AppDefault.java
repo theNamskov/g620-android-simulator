@@ -3,6 +3,8 @@ import javax.swing.*;
 
 public class AppDefault extends JPanel {
     private static final long serialVersionUID = 1L;
+    public static Point custom_location;
+
     private Image img = new ImageIcon(PhoneFrame.class.getResource("asset/frame/nokia-frame2.png")).getImage();
     public int panelWidth = (int) (0.92 * img.getWidth(null)), panelHeight = (int) (0.895 * img.getHeight(null)),
             navPaneY = (int) (0.96 * panelHeight), navButtonsAlignY = (int) ((panelHeight - navPaneY) * 0.15),

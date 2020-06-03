@@ -43,6 +43,8 @@ public class PhoneApp extends AppDefault {
         activePane.setBorder(BorderFactory.createMatteBorder(0, 0, 0, 0, new Color(0, 0, 0, 0)));
         activePane.setOpaque(false);
         add(activePane);
+
+        custom_location = getLocationOnScreen();
     }
 
     // Page navigation buttons setup
