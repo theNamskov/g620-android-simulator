@@ -154,25 +154,25 @@ public class ContactsApp extends AppDefault {
 
 		JLabel nameLab = new JLabel("Name :");
 		nameLab.setForeground(Color.LIGHT_GRAY);
-		nameLab.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		nameLab.setFont(new Font("Lato", Font.PLAIN, 20));
 		nameLab.setBounds(10, 140, 70, 40);
 		contactsPanel.add(nameLab);
 
 		JLabel telLab = new JLabel("Tel     :");
 		telLab.setForeground(Color.LIGHT_GRAY);
-		telLab.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		telLab.setFont(new Font("Lato", Font.PLAIN, 20));
 		telLab.setBounds(10, 185, 70, 40);
 		contactsPanel.add(telLab);
 
 		JLabel namlabIns = new JLabel(Name);
 		namlabIns.setForeground(Color.LIGHT_GRAY);
-		namlabIns.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		namlabIns.setFont(new Font("Lato", Font.PLAIN, 20));
 		namlabIns.setBounds(90, 140, 188, 40);
 		contactsPanel.add(namlabIns);
 
 		JLabel telLabIns = new JLabel(contactNumber[4]);
 		telLabIns.setForeground(Color.LIGHT_GRAY);
-		telLabIns.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		telLabIns.setFont(new Font("Lato", Font.PLAIN, 20));
 		telLabIns.setBounds(83, 185, 182, 40);
 		contactsPanel.add(telLabIns);
 
@@ -365,7 +365,7 @@ public class ContactsApp extends AppDefault {
 
 		allLab.setForeground(Color.DARK_GRAY);
 		allLab.setHorizontalAlignment(SwingConstants.CENTER);
-		allLab.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		allLab.setFont(new Font("Lato", Font.PLAIN, 13));
 		allLab.setBounds(0, 0, 50, 30);
 		allpanel.add(allLab);
 
@@ -378,7 +378,7 @@ public class ContactsApp extends AppDefault {
 		JLabel Missedlab = new JLabel("MISSED\r\n\r\n");
 		Missedlab.setForeground(Color.DARK_GRAY);
 		Missedlab.setHorizontalAlignment(SwingConstants.CENTER);
-		Missedlab.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		Missedlab.setFont(new Font("Lato", Font.PLAIN, 13));
 		Missedlab.setBounds(0, 0, 50, 30);
 		misedPanel.add(Missedlab);
 
@@ -388,7 +388,7 @@ public class ContactsApp extends AppDefault {
 
 		JLabel TimeLabel = new JLabel("Today");
 		TimeLabel.setForeground(Color.LIGHT_GRAY);
-		TimeLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		TimeLabel.setFont(new Font("Lato", Font.PLAIN, 15));
 		TimeLabel.setBounds(15, 92, 104, 30);
 		searchPanel.add(TimeLabel);
 
@@ -426,7 +426,7 @@ public class ContactsApp extends AppDefault {
 		contactsPanel.add(missedImg);
 
 		JLabel lblNewLabel_1 = new JLabel("Ahornam");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_1.setFont(new Font("Lato", Font.PLAIN, 17));
 		lblNewLabel_1.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_1.setBounds(60, 10, 175, 24);
 		contactsPanel.add(lblNewLabel_1);
@@ -435,7 +435,7 @@ public class ContactsApp extends AppDefault {
 		lblNewLabel_1_1.setIcon(new ImageIcon(ContactsApp.class.getResource("/asset/img/icon/missedcall.png")));
 		lblNewLabel_1_1.setBackground(Color.RED);
 		lblNewLabel_1_1.setForeground(Color.RED);
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1.setFont(new Font("Lato", Font.PLAIN, 15));
 		lblNewLabel_1_1.setBounds(61, 37, 163, 24);
 		contactsPanel.add(lblNewLabel_1_1);
 
@@ -446,14 +446,14 @@ public class ContactsApp extends AppDefault {
 
 		JLabel lblNewLabel_1_2 = new JLabel("Nii");
 		lblNewLabel_1_2.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_1_2.setFont(new Font("Lato", Font.PLAIN, 17));
 		lblNewLabel_1_2.setBounds(60, 74, 175, 24);
 		contactsPanel.add(lblNewLabel_1_2);
 
 		JLabel lblNewLabel_1_1_1 = new JLabel("  10:45\r\n");
 		lblNewLabel_1_1_1.setIcon(new ImageIcon(ContactsApp.class.getResource("/asset/img/icon/incall.png")));
 		lblNewLabel_1_1_1.setForeground(new Color(0, 128, 0));
-		lblNewLabel_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_1.setFont(new Font("Lato", Font.PLAIN, 15));
 		lblNewLabel_1_1_1.setBackground(Color.RED);
 		lblNewLabel_1_1_1.setBounds(60, 98, 163, 24);
 		contactsPanel.add(lblNewLabel_1_1_1);
@@ -465,14 +465,14 @@ public class ContactsApp extends AppDefault {
 
 		JLabel lblNewLabel_1_3 = new JLabel("Ahornam");
 		lblNewLabel_1_3.setForeground(Color.LIGHT_GRAY);
-		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_1_3.setFont(new Font("Lato", Font.PLAIN, 17));
 		lblNewLabel_1_3.setBounds(60, 132, 175, 24);
 		contactsPanel.add(lblNewLabel_1_3);
 
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("  11:45\r\n");
 		lblNewLabel_1_1_1_1.setIcon(new ImageIcon(ContactsApp.class.getResource("/asset/img/icon/callout.png")));
 		lblNewLabel_1_1_1_1.setForeground(new Color(100, 149, 237));
-		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1_1_1.setFont(new Font("Lato", Font.PLAIN, 15));
 		lblNewLabel_1_1_1_1.setBackground(Color.RED);
 		lblNewLabel_1_1_1_1.setBounds(61, 160, 163, 24);
 		contactsPanel.add(lblNewLabel_1_1_1_1);
@@ -491,7 +491,7 @@ public class ContactsApp extends AppDefault {
 		contactsPanel.add(missedImg);
 
 		JLabel lblNewLabel_1 = new JLabel("Ahornam");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lblNewLabel_1.setFont(new Font("Lato", Font.PLAIN, 17));
 		lblNewLabel_1.setForeground(Color.LIGHT_GRAY);
 		lblNewLabel_1.setBounds(60, 10, 175, 24);
 		contactsPanel.add(lblNewLabel_1);
@@ -500,7 +500,7 @@ public class ContactsApp extends AppDefault {
 		lblNewLabel_1_1.setIcon(new ImageIcon(ContactsApp.class.getResource("/asset/img/icon/missedcall.png")));
 		lblNewLabel_1_1.setBackground(Color.RED);
 		lblNewLabel_1_1.setForeground(Color.RED);
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel_1_1.setFont(new Font("Lato", Font.PLAIN, 15));
 		lblNewLabel_1_1.setBounds(61, 37, 163, 24);
 		contactsPanel.add(lblNewLabel_1_1);
 
