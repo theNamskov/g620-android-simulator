@@ -9,7 +9,7 @@ class Main {
             Dimension frameSize = phonePanel.getSize();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setLayout(new BorderLayout());
-            frame.setUndecorated(true);
+            // frame.setUndecorated(true);
             frame.setSize(frameSize);
             frame.setLocationByPlatform(true);
             frame.setAlwaysOnTop(true);

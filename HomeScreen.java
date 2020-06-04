@@ -13,7 +13,7 @@ public class HomeScreen extends JPanel {
     private int panelWidth = (int) (size.width * 0.9), panelHeight = (int) (size.height * 0.895);
     private JLabel clock = new JLabel();
     private String time;
-    BackgroundWallpaper background = new BackgroundWallpaper();
+    private BackgroundWallpaper background = new BackgroundWallpaper();
     private DateTimeFormatter timeFormat = DateTimeFormatter.ofPattern("hh:mm");
 
     private String iconHeadPath = "asset/img/icon/";
