@@ -8,6 +8,7 @@ public class WidgetCall extends JFrame {
     PhoneAppCall callPane = new PhoneAppCall();
 
     public WidgetCall(String phoneNum, Point location) {
+        System.out.println(location);
         callPane.setSize(tmp.panelWidth, tmp.panelHeight);
         callPane.setNumber(phoneNum);
         callPane.terminate().addActionListener(e -> dispose());

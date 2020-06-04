@@ -4,6 +4,8 @@ import java.sql.*;
 import java.text.*;
 import java.time.*;
 import java.time.format.*;
+import java.awt.*;
+import javax.swing.*;
 
 public class PhoneAppDB extends AppDefaultDB {
     DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("E, MMM d yyyy");
@@ -33,9 +35,10 @@ public class PhoneAppDB extends AppDefaultDB {
         return rs;
     }
 
-    public ResultSet getContactsData() throws SQLException {
+    public ArrayList<WidgetContactCard> getContactsData() {
+        ArrayList<WidgetContactCard> contacts = new ArrayList<WidgetContactCard>();
         ResultSet rs;
-        String query = "SELECT * FROM CONTACTS";
+        String query = "SELECT * FROM CONTACTS ORDER BY firstname";
         try (Connection conn = getConnection(); Statement stmnt = conn.createStatement()) {
             rs = stmnt.executeQuery(query);
             while (rs.next()) {
@@ -43,12 +46,14 @@ public class PhoneAppDB extends AppDefaultDB {
                 String lastname = rs.getString("lastname");
                 String fullname = firstname + ' ' + lastname;
                 String phonenumber = rs.getString("phonenumber");
-
-                System.out.printf("%s\t%s", fullname, phonenumber);
+                Icon userIcon = null;
+                contacts.add(new WidgetContactCard(phonenumber, fullname, userIcon));
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        return rs;
+        return contacts;
     }
 
     public ArrayList<WidgetCallCard> getFullLogsDetails() {
@@ -120,6 +125,19 @@ public class PhoneAppDB extends AppDefaultDB {
             update += vals;
             stmnt.executeUpdate(update);
             System.out.println(timeFormat.format(date));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addContactsData(String firstname, String lastname, String phoneNumber, int favourite) {
+        String update = "";
+        try (Connection conn = getConnection(); Statement stmnt = conn.createStatement()) {
+            update = "INSERT INTO contacts(firstname, lastname, phonenumber, isfavourite) VALUES ";
+            String vals = "('" + firstname + "','" + lastname + "','" + phoneNumber + "'," + favourite + ')';
+            update += vals;
+            stmnt.executeUpdate(update);
+            System.out.println("Contact added to Database");
         } catch (SQLException e) {
             e.printStackTrace();
         }
