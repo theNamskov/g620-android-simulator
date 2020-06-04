@@ -4,7 +4,7 @@ import javax.swing.*;
 public class ContactsAppRegister extends JPanel {
     private static final long serialVersionUID = 1L;
 
-    String firstName, lastName, phoneNumber;
+    String firstName = "", lastName = "", phoneNumber = "";
     int isFavourite;
 
     PhoneAppDB middleware = new PhoneAppDB();
