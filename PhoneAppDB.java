@@ -142,4 +142,46 @@ public class PhoneAppDB extends AppDefaultDB {
             e.printStackTrace();
         }
     }
+
+    public void addMessageToDatabase(String phone, String msg, String time) {
+        PreparedStatement prepStmnt;
+        DateFormat timeFormat = new SimpleDateFormat("HH:mm");
+        Date date;
+
+        try (Connection conn = getConnection()) {
+            date = new Date();
+            String sql = "INSERT INTO messages(phonenumber, message, date, time, by_self) VALUES(?,?,?,?,?)";
+            prepStmnt = conn.prepareStatement(sql);
+            prepStmnt.setString(1, phone);
+            prepStmnt.setString(2, msg);
+            prepStmnt.setString(3, timeFormat.format(date));
+            prepStmnt.setString(4, time);
+            prepStmnt.setInt(5, 1);
+
+            prepStmnt.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Retrieve all messages from messages table
+    public ResultSet retrieveAllMessages() {
+        Connection conn;
+        try {
+            conn = getConnection();
+        } catch (Exception excep) {
+            System.out.println(excep.getMessage());
+            conn = null;
+        }
+        Statement stmnt;
+        try {
+            String sql = "SELECT DISTINCT * FROM messages LEFT JOIN contacts ON messages.phonenumber=contacts.phonenumber ORDER BY id DESC LIMIT 7";
+            stmnt = conn.createStatement();
+            ResultSet res = stmnt.executeQuery(sql);
+            return res;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            return null;
+        }
+    }
 }

@@ -1,14 +1,14 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class WidgetAddContact extends JFrame {
+public class WidgetDisplayContact extends JFrame {
     private static final long serialVersionUID = 1L;
 
     AppDefault tmp = new AppDefault();
     ContactsAppRegister addContactPanel = new ContactsAppRegister();
     JButton close = new JButton("close");
 
-    public WidgetAddContact(Point location) {
+    public WidgetDisplayContact(String phoneNumber, Point location) {
         close.setBounds(tmp.panelWidth - 40, 5, 40, 40);
         close.setIcon(tmp.getIcon("close-sm"));
         close.setOpaque(false);
